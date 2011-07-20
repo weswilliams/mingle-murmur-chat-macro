@@ -1,0 +1,27 @@
+<h2>Murmur Chat for <%= @project.identifier %></h2>
+<div id='chat-messages' style="height: 300px;width: 400px">
+  <div style=""
+</div>
+
+<div>
+  <label for="new-murmur"></label>
+  <textarea rows="3" cols="1" id="new-murmur"></textarea>
+</div>
+
+<p><span id="debug-info"></span></p>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="../../../../plugin_assets/murmur_chat/javascripts/murmur-chat.js"></script>
+<script language="javascript" type="text/javascript" src="../../../../plugin_assets/murmur_chat/javascripts/debug.js"></script>
+<script type="text/javascript">
+    jQuery.noConflict();
+    var macroDebug = murmurChat.macroDebug(<%= debug_parameter %>, jQuery("#debug-info"));
+    MingleJavascript.register(function () {
+        try {
+            macroDebug.log('starting murmur chat');
+            murmurChat.init(jQuery, macroDebug);
+        } catch(err) {
+            macroDebug(err);
+        }
+    });
+</script>
