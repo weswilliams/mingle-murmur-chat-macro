@@ -1,0 +1,17 @@
+.murmur-feed {
+    height: 200px;
+    width: 400px;
+    border: 1px solid #CCC;
+    overflow: scroll;
+}
+
+.new-murmur {
+    width: 400px;
+}
+
+#debug-info {
+    height: 100px;
+    overflow: scroll;
+    border: 1px solid #EEE;
+    color: #CCC
+}

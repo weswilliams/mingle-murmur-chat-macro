@@ -1,14 +1,13 @@
+<link href="../../../../plugin_assets/murmur_chat/stylesheets/murmur-chat.css" media="screen" rel="stylesheet" type="text/css" />
 <h2>Murmur Chat for <%= @project.identifier %></h2>
-<div id='chat-messages' style="height: 300px;width: 400px">
-  <div style=""
+<div id='chat-messages' class="murmur-feed">
 </div>
-
-<div>
+<div class="new-murmur">
   <label for="new-murmur"></label>
   <textarea rows="3" cols="1" id="new-murmur"></textarea>
 </div>
-
-<p><span id="debug-info"></span></p>
+<br/>
+<div id="debug-info"></div></p>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script language="javascript" type="text/javascript" src="../../../../plugin_assets/murmur_chat/javascripts/murmur-chat.js"></script>
