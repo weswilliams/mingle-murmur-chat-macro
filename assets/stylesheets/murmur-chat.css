@@ -3,14 +3,48 @@
     width: 400px;
     border: 1px solid #CCC;
     overflow: scroll;
+    margin: 10px;
+}
+
+.murmur {
+    float: left;
+    width: 390px;
+    background: #EEE;
+    border-bottom: 2px #CCC groove
+}
+
+.murmur img {
+    height: 48px;
+    width: 48px;
+    float: left;
+    text-indent: -8008px;
+}
+
+.murmur * {
+    padding: 10px;
+    width: 300px;
+    float: right;
+}
+
+.message {
+}
+
+.user-name {
+    font-style: italic;
+    padding: 10px;
 }
 
 .new-murmur {
     width: 400px;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 #debug-info {
     height: 100px;
+    width: 400px;
     overflow: scroll;
     border: 1px solid #EEE;
     color: #CCC
