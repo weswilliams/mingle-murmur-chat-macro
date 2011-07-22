@@ -60,21 +60,26 @@ murmurChat.init = function($) {
   }
 };
 
+murmurChat.createMurmurs = function($, xml, textStatus) {
+  try {
+    $(xml).find('murmur').each(function() {
+      var murmur = murmurChat.createMurmur($(this), $),
+          messages = $('#murmur-messages'),
+          clear = $('#clear:first').clone();
+      messages.prepend(murmur);
+      messages.prepend(clear);
+      murmur.show();
+    });
+  } catch(err) {
+    murmurChat.log("error updating murmur: status:" + textStatus + ", err: " + err);
+  }
+
+};
+
 murmurChat.post = function ($) {
 
   var success = function(xml, textStatus) {
-    try {
-      $(xml).find('murmur').each(function() {
-        var murmur = murmurChat.createMurmur($(this), $),
-            messages = $('#murmur-messages'),
-            clear = $('#clear:first').clone();
-        messages.prepend(murmur);
-        messages.prepend(clear);
-        murmur.show();
-      });
-    } catch(err) {
-      murmurChat.log("error updating murmur: status:" + textStatus + ", err: " + err);
-    }
+      murmurChat.createMurmurs($, xml, textStatus);
   };
 
   try {
@@ -90,19 +95,8 @@ murmurChat.post = function ($) {
 murmurChat.update = function($, seconds) {
 
   var success = function(xml, textStatus) {
-    try {
-      $(xml).find('murmur').each(function() {
-        var murmur = murmurChat.createMurmur($(this), $),
-            messages = $('#murmur-messages'),
-            clear = $('#clear:first').clone();
-        messages.prepend(murmur);
-        messages.prepend(clear);
-        murmur.show();
-      });
-      murmurChat.update($, 10);
-    } catch(err) {
-      murmurChat.log("error updating murmur: status:" + textStatus + ", err: " + err);
-    }
+    murmurChat.createMurmurs($, xml, textStatus);
+    murmurChat.update($, 10);
   };
 
   try {
