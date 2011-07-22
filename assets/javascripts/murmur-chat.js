@@ -26,7 +26,6 @@ murmurChat.init = function($) {
 
   var success = function(xml, textStatus) {
     try {
-
       $(xml).find('murmur').each(function() {
         var murmur = murmurChat.createMurmur($(this), $),
             messages = $('#murmur-messages'),
@@ -35,6 +34,7 @@ murmurChat.init = function($) {
         messages.append(clear);
         murmur.show();
       });
+      murmurChat.update($, 10);
     } catch(err) {
       murmurChat.log("error adding murmur: status:" + textStatus + ", err: " + err);
     }
@@ -54,7 +54,7 @@ murmurChat.init = function($) {
         return false;
       }
     });
-    
+
   } catch(err) {
     murmurChat.log(err);
   }
@@ -76,7 +76,7 @@ murmurChat.post = function ($) {
       murmurChat.log("error updating murmur: status:" + textStatus + ", err: " + err);
     }
   };
-  
+
   try {
     var newMurmur = $("#new-murmur"),
         murmur = {'murmur[body]': newMurmur.val() };
@@ -84,5 +84,42 @@ murmurChat.post = function ($) {
     newMurmur.val("");
   } catch(err) {
     murmurChat.log("error posting murmur:" + err);
+  }
+};
+
+murmurChat.update = function($, seconds) {
+
+  var success = function(xml, textStatus) {
+    try {
+      murmurChat.log("updating murmurs");
+      $(xml).find('murmur').each(function() {
+        var murmur = murmurChat.createMurmur($(this), $),
+            messages = $('#murmur-messages'),
+            clear = $('#clear:first').clone();
+        messages.prepend(murmur);
+        messages.prepend(clear);
+        murmur.show();
+      });
+      murmurChat.update($, 10);
+    } catch(err) {
+      murmurChat.log("error updating murmur: status:" + textStatus + ", err: " + err);
+    }
+  };
+
+  try {
+    var url = '/api/v2/projects/baml_team_1/murmurs.xml';
+    if (murmurChat.lastMurmurId != undefined) {
+      url += "?since_id=" + murmurChat.lastMurmurId;
+    }
+    murmurChat.log("updating: " + url);
+    var getMurmurs = function(url, success) {
+      return function() {
+        murmurChat.log("getting murmurs: " + url);
+        $.get(url, success);
+      }
+    };
+    setTimeout(getMurmurs(url, success) , seconds * 1000);
+  } catch(err) {
+    murmurChat.log("error updating murmurs: " + err);
   }
 };
