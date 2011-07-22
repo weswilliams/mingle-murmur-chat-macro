@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76b3adc3-2637-48bd-b4d7-00791027993d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/javascripts/debug.js" afterPath="$PROJECT_DIR$/assets/javascripts/debug.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" afterPath="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
     </list>
     <ignored path="mingle-murmur-macro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,16 +29,7 @@
       <file leaf-file-name="chat.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/chat.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="6" selection-start="744" selection-end="744" vertical-scroll-proportion="-2.0833333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="debug.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/javascripts/debug.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.4861111">
+            <state line="23" column="6" selection-start="744" selection-end="744" vertical-scroll-proportion="-14.375">
               <folding />
             </state>
           </provider>
@@ -53,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="murmur-chat.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="murmur-chat.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="0" selection-start="2650" selection-end="2650" vertical-scroll-proportion="0.0">
+            <state line="34" column="22" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.5138889">
               <folding />
             </state>
           </provider>
@@ -89,8 +80,8 @@
         <option value="$PROJECT_DIR$/lib/murmur_chat.rb" />
         <option value="$PROJECT_DIR$/assets/stylesheets/murmur-chat.css" />
         <option value="$PROJECT_DIR$/views/chat.erb" />
-        <option value="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
         <option value="$PROJECT_DIR$/assets/javascripts/debug.js" />
+        <option value="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
       </list>
     </option>
   </component>
@@ -310,7 +301,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="62" y="34" width="928" height="800" extended-state="0" />
+    <frame x="62" y="36" width="928" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985073" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -356,7 +347,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- removed unused method" />
+    <option name="LAST_COMMIT_MESSAGE" value="- hide debug log when debug disabled" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -385,6 +376,7 @@
     <MESSAGE value="- removed duplication" />
     <MESSAGE value="- fixed ordering issue on update" />
     <MESSAGE value="- removed unused method" />
+    <MESSAGE value="- hide debug log when debug disabled" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -451,6 +443,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/debug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.4861111">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/chat.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="6" selection-start="744" selection-end="744" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/stylesheets/murmur-chat.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="21" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
@@ -458,23 +464,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/chat.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="6" selection-start="744" selection-end="744" vertical-scroll-proportion="-2.0833333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="0" selection-start="2650" selection-end="2650" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.4861111">
+        <state line="34" column="22" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.5138889">
           <folding />
         </state>
       </provider>

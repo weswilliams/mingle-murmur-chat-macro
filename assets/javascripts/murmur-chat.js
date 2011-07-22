@@ -74,8 +74,8 @@ murmurChat.createMurmurs = function($, xml, textStatus) {
         murmur = murmurChat.createMurmur(murmurXML, $);
         messages = $('#murmur-messages');
         clear = $('#clear:first').clone();
-        messages.prepend(murmur);
         messages.prepend(clear);
+        messages.prepend(murmur);
         murmur.show();
       }
     });
