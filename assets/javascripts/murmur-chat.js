@@ -87,14 +87,10 @@ murmurChat.createMurmurs = function($, xml, textStatus) {
 
 murmurChat.post = function ($) {
 
-  var success = function(xml, textStatus) {
-//    murmurChat.createMurmurs($, xml, textStatus);
-  };
-
   try {
     var newMurmur = $("#new-murmur"),
         murmur = {'murmur[body]': newMurmur.val() };
-    $.post('/api/v2/projects/baml_team_1/murmurs.xml', murmur, success, 'xml');
+    $.post('/api/v2/projects/baml_team_1/murmurs.xml', murmur, 'xml');
     newMurmur.val("");
   } catch(err) {
     murmurChat.log("error posting murmur:" + err);

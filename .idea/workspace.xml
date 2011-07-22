@@ -56,7 +56,7 @@
       <file leaf-file-name="murmur-chat.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="0" selection-start="2048" selection-end="2048" vertical-scroll-proportion="0.3472222">
+            <state line="89" column="0" selection-start="2650" selection-end="2650" vertical-scroll-proportion="0.24305555">
               <folding />
             </state>
           </provider>
@@ -356,7 +356,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- removed duplication" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fixed ordering issue on update" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -383,6 +383,7 @@
     <MESSAGE value="- update is happening" />
     <MESSAGE value="- removed log statements" />
     <MESSAGE value="- removed duplication" />
+    <MESSAGE value="- fixed ordering issue on update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -472,7 +473,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="2048" selection-end="2048" vertical-scroll-proportion="0.3472222">
+        <state line="89" column="0" selection-start="2650" selection-end="2650" vertical-scroll-proportion="0.24305555">
           <folding />
         </state>
       </provider>
