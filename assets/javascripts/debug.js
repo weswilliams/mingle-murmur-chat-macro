@@ -1,4 +1,4 @@
-murmurChat.macroDebug = function(enabled, out) {
+murmurChat.macroDebugInit = function(enabled, out) {
     var that = {};
     that.log = function(msg) {
         if (!enabled) {
@@ -7,6 +7,7 @@ murmurChat.macroDebug = function(enabled, out) {
         out.append(new Date() + ' - ' + msg + '<br/>');
     };
     that.log('debug log starting');
+    murmurChat.macroDebug = that.log;
     return that;
 };
 

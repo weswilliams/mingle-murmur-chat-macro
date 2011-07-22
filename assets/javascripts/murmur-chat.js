@@ -1,8 +1,7 @@
 var murmurChat = {};
 
-murmurChat.createMurmur = function(murmurXML, $, macroDebug) {
+murmurChat.createMurmur = function(murmurXML, $) {
   var murmur, iconPath;
-  macroDebug.log("creating murmur");
   murmur = $('#murmur-template:first').clone();
   iconPath = murmurXML.find('icon_path').text();
   if (!iconPath) {
@@ -18,13 +17,13 @@ murmurChat.createMurmur = function(murmurXML, $, macroDebug) {
   return murmur;
 };
 
-murmurChat.init = function($, macroDebug) {
+murmurChat.init = function($) {
 
   var success = function(xml, textStatus) {
     try {
 
       $(xml).find('murmur').each(function() {
-        var murmur = murmurChat.createMurmur($(this), $, macroDebug),
+        var murmur = murmurChat.createMurmur($(this), $),
             messages = $('#murmur-messages'),
             clear = $('#clear:first').clone();
         messages.append(murmur);
@@ -32,7 +31,7 @@ murmurChat.init = function($, macroDebug) {
         murmur.show();
       });
     } catch(err) {
-      macroDebug.log("error adding murmur: status:" + textStatus + ", err: " + err);
+      murmurChat.macroDebug("error adding murmur: status:" + textStatus + ", err: " + err);
     }
   };
 
@@ -42,27 +41,25 @@ murmurChat.init = function($, macroDebug) {
       $(this).append("Triggered ajaxError handler: " + thrownError);
     });
 
-    macroDebug.log('making murmur request');
     $.get('/api/v2/projects/baml_team_1/murmurs.xml', success);
 
     $("#new-murmur").keydown(function(e) {
       if ((e.keyCode || e.which) == 13) {
-        murmurChat.post($, macroDebug);
+        murmurChat.post($);
       }
     });
     
   } catch(err) {
-    macroDebug.log(err);
+    murmurChat.macroDebug(err);
   }
 };
 
-murmurChat.post = function ($, macroDebug) {
+murmurChat.post = function ($) {
 
   var success = function(xml, textStatus) {
     try {
-      macroDebug.log("successful post: " + textStatus);
       $(xml).find('murmur').each(function() {
-        var murmur = murmurChat.createMurmur($(this), $, macroDebug),
+        var murmur = murmurChat.createMurmur($(this), $),
             messages = $('#murmur-messages'),
             clear = $('#clear:first').clone();
         messages.prepend(murmur);
@@ -70,17 +67,16 @@ murmurChat.post = function ($, macroDebug) {
         murmur.show();
       });
     } catch(err) {
-      macroDebug.log("error updating murmur: status:" + textStatus + ", err: " + err);
+      murmurChat.macroDebug("error updating murmur: status:" + textStatus + ", err: " + err);
     }
   };
   
   try {
     var newMurmur = $("#new-murmur"),
         murmur = {'murmur[body]': newMurmur.val() };
-    macroDebug.log("posting murmur: " + murmur);
     $.post('/api/v2/projects/baml_team_1/murmurs.xml', murmur, success, 'xml');
     newMurmur.val("");
   } catch(err) {
-    macroDebug.log("error posting murmur:" + err);
+    murmurChat.macroDebug("error posting murmur:" + err);
   }
 };

@@ -30,13 +30,12 @@
 <script language="javascript" type="text/javascript" src="../../../../plugin_assets/murmur_chat/javascripts/debug.js"></script>
 <script type="text/javascript">
     jQuery.noConflict();
-    var macroDebug = murmurChat.macroDebug(<%= debug_parameter %>, jQuery("#debug-info"));
+    murmurChat.macroDebugInit(<%= debug_parameter %>, jQuery("#debug-info"));
     MingleJavascript.register(function () {
         try {
-            macroDebug.log('starting murmur chat');
-            murmurChat.init(jQuery, macroDebug);
+            murmurChat.init(jQuery);
         } catch(err) {
-            macroDebug(err);
+            murmurChat.macroDebug(err);
         }
     });
 </script>
