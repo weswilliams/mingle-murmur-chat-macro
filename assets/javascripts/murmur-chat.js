@@ -1,13 +1,18 @@
 var murmurChat = {};
 
 murmurChat.createMurmur = function(murmurXML, $) {
-  var murmur, iconPath;
+  var murmur, iconPath, id;
   murmur = $('#murmur-template:first').clone();
   iconPath = murmurXML.find('icon_path').text();
   if (!iconPath) {
     iconPath = "../../../../plugin_assets/murmur_chat/images/default_user_avatar.png";
   }
-  murmur.attr('id', murmurXML.find('id:first').text());
+  id = parseInt(murmurXML.find('id:first').text(), 10);
+  if (murmurChat.lastMurmurId == undefined || id > murmurChat.lastMurmurId) {
+    murmurChat.lastMurmurId = id;
+  }
+  murmurChat.log("murmurChat.lastMurmurId = " + murmurChat.lastMurmurId);
+  murmur.attr('id', id);
   $('#user-image', murmur).attr('src', iconPath);
   $('#message', murmur).text(murmurXML.find('body').text());
   $('#user-name', murmur).text(murmurXML.find('name').text());
