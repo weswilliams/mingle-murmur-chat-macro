@@ -1,7 +1,8 @@
 <link href="../../../../plugin_assets/murmur_chat/stylesheets/murmur-chat.css" media="screen" rel="stylesheet" type="text/css"/>
 
 <div id="murmur-template" class="hidden">
-  <img id ="user-image" src="../../../../plugin_assets/murmur_chat/images/default_user_avatar.png">
+  <img id="user-image" src="../../../../plugin_assets/murmur_chat/images/default_user_avatar.png">
+
   <div id="message" class="message"></div>
   <div class="user-name">
     <span id="user-name"></span> <span id="create-at" class="create-at"></span>
@@ -12,13 +13,15 @@
 
 <h2>Murmur Chat for <%= @project.identifier %></h2>
 
-<div class="new-murmur">
-  <label for="new-murmur"></label>
-  <textarea rows="3" cols="1" id="new-murmur"></textarea>
-</div>
+<div class="murmur-chat">
+  <div class="new-murmur">
+    <label for="new-murmur"></label>
+    <textarea rows="3" cols="1" id="new-murmur"></textarea>
+  </div>
 
-<div id='murmur-messages' class="murmur-feed"></div>
-<br/>
+  <div id='murmur-messages' class="murmur-feed"></div>
+  <br/>
+</div>
 
 <div id="debug-info"></div>
 
