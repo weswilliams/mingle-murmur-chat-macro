@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b3adc3-2637-48bd-b4d7-00791027993d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/wes.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/wes.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" afterPath="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/chat.erb" afterPath="$PROJECT_DIR$/views/chat.erb" />
@@ -31,7 +30,7 @@
       <file leaf-file-name="chat.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/chat.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1703" selection-end="1703" vertical-scroll-proportion="-10.208333">
+            <state line="40" column="62" selection-start="1845" selection-end="1845" vertical-scroll-proportion="-11.875">
               <folding />
             </state>
           </provider>
@@ -49,7 +48,7 @@
       <file leaf-file-name="murmur-chat.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="3" selection-start="1757" selection-end="1757" vertical-scroll-proportion="0.125">
+            <state line="26" column="51" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.5833333">
               <folding />
             </state>
           </provider>
@@ -82,8 +81,8 @@
         <option value="$PROJECT_DIR$/lib/murmur_chat.rb" />
         <option value="$PROJECT_DIR$/assets/javascripts/debug.js" />
         <option value="$PROJECT_DIR$/assets/stylesheets/murmur-chat.css" />
-        <option value="$PROJECT_DIR$/views/chat.erb" />
         <option value="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
+        <option value="$PROJECT_DIR$/views/chat.erb" />
       </list>
     </option>
   </component>
@@ -367,7 +366,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- a bit more layout tweaking" />
+    <option name="LAST_COMMIT_MESSAGE" value="- allow resizable height" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -400,6 +399,7 @@
     <MESSAGE value="- fixed issue with order of clear in updates" />
     <MESSAGE value="- fixed image location issue" />
     <MESSAGE value="- a bit more layout tweaking" />
+    <MESSAGE value="- allow resizable height" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -473,13 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/chat.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1703" selection-end="1703" vertical-scroll-proportion="-10.208333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/stylesheets/murmur-chat.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="19" selection-start="132" selection-end="135" vertical-scroll-proportion="0.0">
@@ -487,9 +480,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/chat.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="62" selection-start="1845" selection-end="1845" vertical-scroll-proportion="-11.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="3" selection-start="1757" selection-end="1757" vertical-scroll-proportion="0.125">
+        <state line="26" column="51" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.5833333">
           <folding />
         </state>
       </provider>

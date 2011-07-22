@@ -22,7 +22,9 @@ murmurChat.createMurmur = function(murmurXML, $) {
   return murmur;
 };
 
-murmurChat.init = function($) {
+murmurChat.init = function($, projectIdentifier) {
+
+  murmurChat.log("chat for: " + projectIdentifier);
 
   var success = function(xml, textStatus) {
     try {
@@ -42,11 +44,14 @@ murmurChat.init = function($) {
 
   try {
 
+    murmurChat.url = '/api/v2/projects/' + projectIdentifier + '/murmurs.xml';
+
     $("#debug-info").ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
-      $(this).append("Triggered ajaxError handler: " + thrownError);
+      murmurChat.log("Triggered ajaxError handler: " + thrownError);
     });
 
-    $.get('/api/v2/projects/baml_team_1/murmurs.xml', success);
+    murmurChat.log("getting murmurs: " + murmurChat.url);
+    $.get(murmurChat.url, success);
 
     $("#new-murmur").keydown(function(e) {
       if ((e.keyCode || e.which) == 13) {
@@ -98,7 +103,8 @@ murmurChat.post = function ($) {
   try {
     var newMurmur = $("#new-murmur"),
         murmur = {'murmur[body]': newMurmur.val() };
-    $.post('/api/v2/projects/baml_team_1/murmurs.xml', murmur, 'xml');
+    murmurChat.log("posting murmur: " + murmur);
+    $.post(murmurChat.url, murmur, 'xml');
     newMurmur.val("");
   } catch(err) {
     murmurChat.log("error posting murmur:" + err);
@@ -113,12 +119,13 @@ murmurChat.update = function($, seconds) {
   };
 
   try {
-    var url = '/api/v2/projects/baml_team_1/murmurs.xml';
+    var url = murmurChat.url;
     if (murmurChat.lastMurmurId != undefined) {
       url += "?since_id=" + murmurChat.lastMurmurId;
     }
     var getMurmurs = function(url, success) {
       return function() {
+        murmurChat.log("getting murmurs: " + url);
         $.get(url, success);
       }
     };

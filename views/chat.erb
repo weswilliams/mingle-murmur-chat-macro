@@ -25,7 +25,7 @@
 </div>
 
 <div id="debug-info"></div>
-
+<div id="project" class="hidden"><%= @project.identifier %></div>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript">
     jQuery.noConflict();
@@ -37,7 +37,8 @@
     murmurChat.macroDebugInit(<%= debug_parameter %>, jQuery("#debug-info"));
     MingleJavascript.register(function () {
         try {
-            murmurChat.init(jQuery);
+            murmurChat.log("starting murmur chat");
+            murmurChat.init(jQuery, jQuery('#project').text());
         } catch(err) {
             murmurChat.log(err);
         }
