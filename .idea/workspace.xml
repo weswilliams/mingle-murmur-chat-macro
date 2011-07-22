@@ -38,7 +38,7 @@
       <file leaf-file-name="murmur-chat.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/stylesheets/murmur-chat.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="17" selection-start="607" selection-end="607" vertical-scroll-proportion="0.625">
+            <state line="32" column="16" selection-start="574" selection-end="574" vertical-scroll-proportion="0.6180556">
               <folding />
             </state>
           </provider>
@@ -347,7 +347,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fixed issue with order of clear in updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fixed image location issue" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -378,6 +378,7 @@
     <MESSAGE value="- removed unused method" />
     <MESSAGE value="- hide debug log when debug disabled" />
     <MESSAGE value="- fixed issue with order of clear in updates" />
+    <MESSAGE value="- fixed image location issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -467,7 +468,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/stylesheets/murmur-chat.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="17" selection-start="607" selection-end="607" vertical-scroll-proportion="0.625">
+        <state line="32" column="16" selection-start="574" selection-end="574" vertical-scroll-proportion="0.6180556">
           <folding />
         </state>
       </provider>

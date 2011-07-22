@@ -16,8 +16,9 @@
 
 .murmur {
     float:         left;
-    width:         360px;
-    border-bottom: 2px #df601b groove
+    width:         355px;
+    border-bottom: 2px #df601b groove;
+    padding: 5px;
 }
 
 .murmur img {
@@ -25,14 +26,12 @@
     width:       48px;
     float:       left;
     text-indent: -8008px;
-    padding: 10px;
 }
 
 .murmur * {
-    padding-right: 10px;
-    padding-top:   20px;
-    width:         260px;
-    float:         right;
+    padding: 5px;
+    width:   250px;
+    float:   right;
 }
 
 .murmur * * {
@@ -41,11 +40,11 @@
 
 .message {
     background: #EE9A00;
+    padding-right: 5px;
 }
 
 .user-name {
     font-style: italic;
-    padding:    10px;
 }
 
 .created-at {
