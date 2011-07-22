@@ -2,6 +2,12 @@ murmur_chat macro for mingle
 * updates via ajax request every 10 seconds,
 * using since as part of the request to reduce traffic
 
+If you have an environment where you cannot have a chat service or install the murmur.air
+chat tool from thoughtworks this could work for you. It is a simple macro that you can
+put on a wiki page that updates similar to the murmur.air chat tool. Just keep a browser
+window open with the wiki containing the macro and you have your chat tool.  They would
+have to ban your planning tool to ban this chat. :)
+
 {{
   murmur_chat
 }}
