@@ -41,6 +41,24 @@ murmurChat.init = function($, macroDebug) {
     macroDebug.log('making murmur request');
     $.get('/api/v2/projects/baml_team_1/murmurs.xml', success);
 
+    $("#new-murmur").keydown(function(e) {
+      if ((e.keyCode || e.which) == 13) {
+        murmurChat.post($, macroDebug);
+      }
+    });
+    
+  } catch(err) {
+    macroDebug.log(err);
+  }
+};
+
+murmurChat.post = function ($, macroDebug) {
+  try {
+    var newMurmur = $("#new-murmur"),
+        murmur = {'murmur[body]': newMurmur.val() };
+    macroDebug.log("posting murmur: " + murmur);
+    $.post('/api/v2/projects/baml_team_1/murmurs.xml', murmur, 'xml');
+    newMurmur.val("");
   } catch(err) {
     macroDebug.log(err);
   }
