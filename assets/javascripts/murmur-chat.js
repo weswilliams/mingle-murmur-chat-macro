@@ -31,7 +31,7 @@ murmurChat.init = function($) {
         murmur.show();
       });
     } catch(err) {
-      murmurChat.macroDebug("error adding murmur: status:" + textStatus + ", err: " + err);
+      murmurChat.log("error adding murmur: status:" + textStatus + ", err: " + err);
     }
   };
 
@@ -50,7 +50,7 @@ murmurChat.init = function($) {
     });
     
   } catch(err) {
-    murmurChat.macroDebug(err);
+    murmurChat.log(err);
   }
 };
 
@@ -67,7 +67,7 @@ murmurChat.post = function ($) {
         murmur.show();
       });
     } catch(err) {
-      murmurChat.macroDebug("error updating murmur: status:" + textStatus + ", err: " + err);
+      murmurChat.log("error updating murmur: status:" + textStatus + ", err: " + err);
     }
   };
   
@@ -77,6 +77,6 @@ murmurChat.post = function ($) {
     $.post('/api/v2/projects/baml_team_1/murmurs.xml', murmur, success, 'xml');
     newMurmur.val("");
   } catch(err) {
-    murmurChat.macroDebug("error posting murmur:" + err);
+    murmurChat.log("error posting murmur:" + err);
   }
 };

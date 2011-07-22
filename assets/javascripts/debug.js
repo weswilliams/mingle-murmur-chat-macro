@@ -7,7 +7,7 @@ murmurChat.macroDebugInit = function(enabled, out) {
         out.append(new Date() + ' - ' + msg + '<br/>');
     };
     that.log('debug log starting');
-    murmurChat.macroDebug = that.log;
+    murmurChat.log = that.log;
     return that;
 };
 
