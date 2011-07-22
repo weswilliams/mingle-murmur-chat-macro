@@ -8,7 +8,7 @@ murmurChat.createMurmur = function(murmurXML, $) {
     iconPath = "../../../../plugin_assets/murmur_chat/images/default_user_avatar.png";
   }
   id = parseInt(murmurXML.find('id:first').text(), 10);
-  if (murmurChat.lastMurmurId == undefined || id > murmurChat.lastMurmurId) {
+  if (murmurChat.lastMurmurId === undefined || id > murmurChat.lastMurmurId) {
     murmurChat.lastMurmurId = id;
   }
   murmurChat.log("murmurChat.lastMurmurId = " + murmurChat.lastMurmurId);
@@ -22,9 +22,9 @@ murmurChat.createMurmur = function(murmurXML, $) {
   return murmur;
 };
 
-murmurChat.init = function($, projectIdentifier) {
+murmurChat.init = function($, project) {
 
-  murmurChat.log("chat for: " + projectIdentifier);
+  murmurChat.log("chat for: " + project);
 
   var success = function(xml, textStatus) {
     try {
@@ -44,7 +44,7 @@ murmurChat.init = function($, projectIdentifier) {
 
   try {
 
-    murmurChat.url = '/api/v2/projects/' + projectIdentifier + '/murmurs.xml';
+    murmurChat.url = '/api/v2/projects/' + project + '/murmurs.xml';
 
     $("#debug-info").ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
       murmurChat.log("Triggered ajaxError handler: " + thrownError);
@@ -120,7 +120,7 @@ murmurChat.update = function($, seconds) {
 
   try {
     var url = murmurChat.url;
-    if (murmurChat.lastMurmurId != undefined) {
+    if (murmurChat.lastMurmurId !== undefined) {
       url += "?since_id=" + murmurChat.lastMurmurId;
     }
     var getMurmurs = function(url, success) {

@@ -1,8 +1,13 @@
 murmurChat.macroDebugInit = function(enabled, out) {
   var that = {};
+
+  out.append("debug: " + enabled);
+  if (enabled.toLowerCase() === 'false') {
+    out.hide();
+  }
+
   that.log = function(msg) {
-    if (!enabled) {
-      out.hide();
+    if (enabled.toLowerCase() === 'false') {
       return;
     }
     out.append(new Date() + ' - ' + msg + '<br/>');

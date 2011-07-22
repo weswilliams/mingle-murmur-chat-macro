@@ -1,5 +1,15 @@
 murmur_chat macro for mingle
+* updates via ajax request every 10 seconds,
+* using since as part of the request to reduce traffic
 
 {{
   murmur_chat
 }}
+
+
+Future:
+
+search by story #
+search by user
+add @user to highlight messages to me
+search by @user
