@@ -46,6 +46,7 @@ murmurChat.init = function($) {
     $("#new-murmur").keydown(function(e) {
       if ((e.keyCode || e.which) == 13) {
         murmurChat.post($);
+        return false;
       }
     });
     
