@@ -91,7 +91,6 @@ murmurChat.update = function($, seconds) {
 
   var success = function(xml, textStatus) {
     try {
-      murmurChat.log("updating murmurs");
       $(xml).find('murmur').each(function() {
         var murmur = murmurChat.createMurmur($(this), $),
             messages = $('#murmur-messages'),
@@ -111,10 +110,8 @@ murmurChat.update = function($, seconds) {
     if (murmurChat.lastMurmurId != undefined) {
       url += "?since_id=" + murmurChat.lastMurmurId;
     }
-    murmurChat.log("updating: " + url);
     var getMurmurs = function(url, success) {
       return function() {
-        murmurChat.log("getting murmurs: " + url);
         $.get(url, success);
       }
     };
