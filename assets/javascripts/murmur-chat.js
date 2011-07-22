@@ -20,6 +20,7 @@ murmurChat.init = function($, macroDebug) {
         $('#user-image', murmur).attr('src', iconPath);
         $('#message', murmur).text(murmurXML.find('body').text());
         $('#user-name', murmur).text(murmurXML.find('name').text());
+        $('#create-at', murmur).text(murmurXML.find('created_at').text());
         messages.append(murmur);
         murmur.removeClass('hidden');
         murmur.addClass('murmur');

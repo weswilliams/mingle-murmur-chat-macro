@@ -9,7 +9,7 @@
 .murmur {
     float: left;
     width: 390px;
-    background: #EEE;
+    background: #FFA500;
     border-bottom: 2px #CCC groove
 }
 
@@ -26,12 +26,22 @@
     float: right;
 }
 
+.murmur * * {
+    width: auto;
+    float: none;
+}
+
 .message {
+    background: #EE9A00;
 }
 
 .user-name {
     font-style: italic;
     padding: 10px;
+}
+
+.created-at {
+    font-size: small;
 }
 
 #clear {
