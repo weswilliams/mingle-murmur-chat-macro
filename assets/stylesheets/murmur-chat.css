@@ -34,6 +34,10 @@
     padding: 10px;
 }
 
+#clear {
+    clear: both;
+}
+
 .new-murmur {
     width: 400px;
 }
