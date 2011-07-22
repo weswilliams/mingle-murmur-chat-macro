@@ -55,6 +55,14 @@ murmurChat.init = function($) {
       }
     });
 
+    $('.resizable').resizable({
+      maxWidth: 400,
+      minWidth: 400,
+      resize: function(event, ui) {
+        $('#murmur-messages').height(ui.size.height - 100);
+      }
+    });
+
   } catch(err) {
     murmurChat.log(err);
   }
