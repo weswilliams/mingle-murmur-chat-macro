@@ -12,6 +12,9 @@ have to ban your planning tool to ban this chat. :)
   murmur_chat
 }}
 
+optional parameters
+* debug: yes|no - allow you to see any javascript errors and other info
+* update_interval: number_of_second - defaults to true
 
 Future:
 

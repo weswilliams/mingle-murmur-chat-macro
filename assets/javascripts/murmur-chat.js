@@ -22,9 +22,11 @@ murmurChat.createMurmur = function(murmurXML, $) {
   return murmur;
 };
 
-murmurChat.init = function($, project) {
+murmurChat.init = function($, project, updateInterval) {
 
   murmurChat.log("chat for: " + project);
+
+  murmurChat.updateInterval = updateInterval;
 
   var success = function(xml, textStatus) {
     try {
@@ -36,7 +38,7 @@ murmurChat.init = function($, project) {
         messages.append(clear);
         murmur.show();
       });
-      murmurChat.update($, 10);
+      murmurChat.update($);
     } catch(err) {
       murmurChat.log("error adding murmur: status:" + textStatus + ", err: " + err);
     }
@@ -111,11 +113,11 @@ murmurChat.post = function ($) {
   }
 };
 
-murmurChat.update = function($, seconds) {
+murmurChat.update = function($) {
 
   var success = function(xml, textStatus) {
     murmurChat.createMurmurs($, xml, textStatus);
-    murmurChat.update($, 10);
+    murmurChat.update($);
   };
 
   try {
@@ -129,7 +131,8 @@ murmurChat.update = function($, seconds) {
         $.get(url, success);
       }
     };
-    setTimeout(getMurmurs(url, success), seconds * 1000);
+    murmurChat.log("updating in " + murmurChat.updateInterval + " seconds");
+    setTimeout(getMurmurs(url, success), murmurChat.updateInterval * 1000);
   } catch(err) {
     murmurChat.log("error updating murmurs: " + err);
   }

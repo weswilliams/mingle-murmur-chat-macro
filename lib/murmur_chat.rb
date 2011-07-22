@@ -9,7 +9,10 @@ module CustomMacro
     def initialize(parameters, project, current_user)
       @project = project
       @current_user = current_user
-      @parameters = Parameters::Parameters.new(parameters, 'view' => 'chat', "debug" => false)
+      @parameters = Parameters::Parameters.new(parameters,
+        'view' => 'chat',
+        'debug' => false,
+        'update_interval' => 10)
     end
 
     def execute
