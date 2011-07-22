@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="76b3adc3-2637-48bd-b4d7-00791027993d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" afterPath="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/murmur_chat.rb" afterPath="$PROJECT_DIR$/lib/murmur_chat.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/chat.erb" afterPath="$PROJECT_DIR$/views/chat.erb" />
     </list>
     <ignored path="mingle-murmur-macro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -377,7 +373,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- updated README" />
+    <option name="LAST_COMMIT_MESSAGE" value="- added parameter for update_interval&#10;- updated README" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -414,6 +410,7 @@
     <MESSAGE value="- now using the project identifier&#10;" />
     <MESSAGE value="- fixed an issue with debug enable&#10;- use === for undefined&#10;- renamed projectIdentifier to project&#10;- updated README" />
     <MESSAGE value="- updated README" />
+    <MESSAGE value="- added parameter for update_interval&#10;- updated README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
