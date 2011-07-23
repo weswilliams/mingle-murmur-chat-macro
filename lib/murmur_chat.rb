@@ -12,7 +12,8 @@ module CustomMacro
       @parameters = Parameters::Parameters.new(parameters,
         'view' => 'chat',
         'debug' => false,
-        'update_interval' => 10)
+        'update_interval' => 10,
+        'mingle_url' => "")
     end
 
     def execute

@@ -28,6 +28,7 @@
 <div id="project" class="hidden"><%= @project.identifier %></div>
 <div id="debug" class="hidden"><%= debug_parameter %></div>
 <div id="update_interval" class="hidden"><%= update_interval_parameter %></div>
+<div id="mingle_url" class="hidden"><%= mingle_url_parameter %></div>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript">
     jQuery.noConflict();
@@ -40,7 +41,10 @@
     MingleJavascript.register(function () {
         try {
             murmurChat.log("starting murmur chat");
-            murmurChat.init(jQuery, jQuery('#project').text(), parseInt(jQuery('#update_interval').text(),10));
+            murmurChat.init(jQuery, jQuery('#project').text(),
+                    parseInt(jQuery('#update_interval').text(),10),
+                    jQuery("#mingle_url").text()
+            );
         } catch(err) {
             murmurChat.log(err);
         }

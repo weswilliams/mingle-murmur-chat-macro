@@ -22,7 +22,7 @@ murmurChat.createMurmur = function(murmurXML, $) {
   return murmur;
 };
 
-murmurChat.init = function($, project, updateInterval) {
+murmurChat.init = function($, project, updateInterval, mingle_url) {
 
   murmurChat.log("chat for: " + project);
 
@@ -46,7 +46,7 @@ murmurChat.init = function($, project, updateInterval) {
 
   try {
 
-    murmurChat.url = '/api/v2/projects/' + project + '/murmurs.xml';
+    murmurChat.url = mingle_url + '/api/v2/projects/' + project + '/murmurs.xml';
 
     $("#debug-info").ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
       murmurChat.log("Triggered ajaxError handler: " + thrownError);
