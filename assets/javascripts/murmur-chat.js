@@ -55,13 +55,8 @@ murmurChat.filters = function() {
   };
 
   var userMentionFilter = function($, data) {
-    if (data.filter.indexOf('@') !== 0) {
-      return true;
-    }
-    var filterUser = data.filter.trim().substring(1),
-        message = $('#message', data.murmur).text().trim(),
-        namePattern = new RegExp(filterUser, "i");
-    return namePattern.test(message);
+    data.searchField = 'message';
+    return userFilter($, data);
   };
 
   var noFilter = function($, data) {
@@ -73,8 +68,7 @@ murmurChat.filters = function() {
 
 murmurChat.filter = function($, filter) {
   $('.murmur').each(function() {
-    var murmurUser = $('#user-name', $(this)).text().toLowerCase().trim(),
-        murmur = $(this),
+    var murmur = $(this),
         data = { filter: filter, murmur: murmur },
         filters = murmurChat.filters(),
         show = false, index = 0;
