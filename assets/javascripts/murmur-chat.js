@@ -49,11 +49,21 @@ murmurChat.filters = function() {
     return namePattern.test(murmurUser);
   };
 
+  var userMentionFilter = function($, data) {
+    if (data.filter.indexOf('@') !== 0) {
+      return true;
+    }
+    var filterUser = data.filter.trim().substring(1),
+        message = $('#message', data.murmur).text().trim(),
+        namePattern = new RegExp(filterUser, "i");
+    return namePattern.test(message);
+  };
+
   var noFilter = function($, data) {
     return data.filter.trim() === '';
   };
 
-  return [userNameFilter, noFilter];
+  return [userNameFilter, noFilter, userMentionFilter];
 };
 
 murmurChat.filter = function($, filter) {
