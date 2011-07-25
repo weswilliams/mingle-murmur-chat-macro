@@ -39,14 +39,19 @@ murmurChat.initNewMessage = function($) {
 
 murmurChat.filters = function() {
 
-  var userNameFilter = function($, data) {
+  var userFilter = function($, data) {
     if (data.filter.indexOf('@') !== 0) {
       return true;
     }
     var filterUser = data.filter.trim().substring(1),
-        murmurUser = $('#user-name', data.murmur).text().trim(),
+        murmurUser = $('#' + data.searchField, data.murmur).text().trim(),
         namePattern = new RegExp(filterUser, "i");
     return namePattern.test(murmurUser);
+  };
+
+  var userNameFilter = function($, data) {
+    data.searchField = 'user-name';
+    return userFilter($, data);
   };
 
   var userMentionFilter = function($, data) {
