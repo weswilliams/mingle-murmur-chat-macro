@@ -6,7 +6,7 @@ murmurChat.initFilter = function($) {
 
   var success = function(xml, status) {
     var users = [];
-    murmurChat.log("retrieved users: " + xml);
+    murmurChat.log("retrieved users: " + status);
 
     $(xml).find("user").each(function() {
       var name = $(this).find("name").text();
@@ -59,11 +59,7 @@ murmurChat.createMurmur = function(murmurXML, $) {
   return murmur;
 };
 
-murmurChat.init = function($, project, updateInterval, mingle_url) {
-
-  murmurChat.log("chat for: " + project);
-
-  murmurChat.updateInterval = updateInterval;
+murmurChat.initMurmurs = function($) {
 
   var success = function(xml, textStatus) {
     try {
@@ -81,28 +77,39 @@ murmurChat.init = function($, project, updateInterval, mingle_url) {
     }
   };
 
-  try {
+  murmurChat.log("getting murmurs: " + murmurChat.url);
+  $.get(murmurChat.url, success);
 
+};
+
+murmurChat.initAjaxErrorHandling = function($) {
+  $("#debug-info").ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
+    murmurChat.log("Triggered ajaxError handler: " + thrownError);
+  });
+};
+
+murmurChat.initResizeMurmurs = function($) {
+  $('.resizable').resizable({
+    maxWidth: 400,
+    minWidth: 400,
+    resize: function(event, ui) {
+      $('#murmur-messages').height(ui.size.height - 100);
+    }
+  });
+};
+
+murmurChat.init = function($, project, updateInterval, mingle_url) {
+
+  try {
+    murmurChat.log("chat for: " + project);
+    murmurChat.updateInterval = updateInterval;
     murmurChat.url = mingle_url + '/api/v2/projects/' + project + '/murmurs.xml';
     murmurChat.userURL = mingle_url + '/api/v2/users.xml';
-    murmurChat.initFilter($);
+    murmurChat.initAjaxErrorHandling($);
+    murmurChat.initMurmurs($);
     murmurChat.initNewMessage($);
-
-    $("#debug-info").ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
-      murmurChat.log("Triggered ajaxError handler: " + thrownError);
-    });
-
-    murmurChat.log("getting murmurs: " + murmurChat.url);
-    $.get(murmurChat.url, success);
-
-    $('.resizable').resizable({
-      maxWidth: 400,
-      minWidth: 400,
-      resize: function(event, ui) {
-        $('#murmur-messages').height(ui.size.height - 100);
-      }
-    });
-
+    murmurChat.initFilter($);
+    murmurChat.initResizeMurmurs($);
   } catch(err) {
     murmurChat.log(err);
   }
