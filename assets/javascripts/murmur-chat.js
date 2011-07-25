@@ -9,7 +9,7 @@ murmurChat.initFilter = function($) {
     murmurChat.log("retrieved users: " + status);
 
     $(xml).find("user").each(function() {
-      var name = $(this).find("name").text();
+      var name = '@' + $(this).find("name").text();
       murmurChat.log("add user " + name);
       users.push(name);
     });
@@ -37,14 +37,28 @@ murmurChat.initNewMessage = function($) {
   });
 };
 
-murmurChat.filterByUser = function($, user) {
-  var filterUser = user.toLowerCase().trim(), murmurUser;
+murmurChat.filterByUser = function($, filter) {
+
+  var userFilter = function($, filter, murmur) {
+    if (filter.indexOf('@') !== 0) {
+      return true;
+    }
+    var filterUser = filter.toLowerCase().trim().substring(1),
+        murmurUser = $('#user-name', murmur).text().toLowerCase().trim();
+    return filterUser === murmurUser
+  };
+
+  var noFilter = function($, filter, murmur) {
+    return filter.trim() === '';
+  };
+
   $('.murmur').each(function(){
-    var murmurUser = $('#user-name', $(this)).text().toLowerCase().trim();
-    if (filterUser === murmurUser || filterUser === '') {
-      $(this).show();
+    var murmurUser = $('#user-name', $(this)).text().toLowerCase().trim(),
+        murmur = $(this);
+    if (noFilter($, filter, $(this)) || userFilter($, filter, murmur)) {
+      murmur.show();
     } else {
-      $(this).hide();
+      murmur.hide();
     }
   });
 };

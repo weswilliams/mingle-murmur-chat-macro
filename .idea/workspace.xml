@@ -38,7 +38,7 @@
       <file leaf-file-name="murmur-chat.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="38" selection-start="768" selection-end="768" vertical-scroll-proportion="0.34642032">
+            <state line="45" column="20" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.23787528">
               <folding />
             </state>
           </provider>
@@ -357,7 +357,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- refactoring to separate init functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="- ability to filter by user, need to refactor to use character indicating type of filter to be user" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -370,7 +370,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="- better layout and colors" />
     <MESSAGE value="- posting is working" />
     <MESSAGE value="- added murmur after successful post" />
     <MESSAGE value="- moved logging to a murmurChat object level to stop passing the logger around" />
@@ -395,6 +394,7 @@
     <MESSAGE value="- getting user for autocomplete" />
     <MESSAGE value="- moved init of new murmur textarea to a new function" />
     <MESSAGE value="- refactoring to separate init functions" />
+    <MESSAGE value="- ability to filter by user, need to refactor to use character indicating type of filter to be user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -477,7 +477,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="38" selection-start="768" selection-end="768" vertical-scroll-proportion="0.34642032">
+        <state line="45" column="20" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.23787528">
           <folding />
         </state>
       </provider>
