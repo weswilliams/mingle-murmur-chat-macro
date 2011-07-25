@@ -7,7 +7,7 @@ murmurChat.initFilter = function($) {
   var success = function(xml, status) {
     var users = [];
     murmurChat.log("retrieved users: " + xml);
-    
+
     $(xml).find("user").each(function() {
       var name = $(this).find("name").text();
       murmurChat.log("add user " + name);
@@ -26,6 +26,15 @@ murmurChat.initFilter = function($) {
     murmurChat.log("error getting users: " + e);
   }
 
+};
+
+murmurChat.initNewMessage = function($) {
+  $("#new-murmur").keydown(function(e) {
+    if ((e.keyCode || e.which) == 13) {
+      murmurChat.post($);
+      return false;
+    }
+  });
 };
 
 murmurChat.createMurmur = function(murmurXML, $) {
@@ -77,6 +86,7 @@ murmurChat.init = function($, project, updateInterval, mingle_url) {
     murmurChat.url = mingle_url + '/api/v2/projects/' + project + '/murmurs.xml';
     murmurChat.userURL = mingle_url + '/api/v2/users.xml';
     murmurChat.initFilter($);
+    murmurChat.initNewMessage($);
 
     $("#debug-info").ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
       murmurChat.log("Triggered ajaxError handler: " + thrownError);
@@ -84,13 +94,6 @@ murmurChat.init = function($, project, updateInterval, mingle_url) {
 
     murmurChat.log("getting murmurs: " + murmurChat.url);
     $.get(murmurChat.url, success);
-
-    $("#new-murmur").keydown(function(e) {
-      if ((e.keyCode || e.which) == 13) {
-        murmurChat.post($);
-        return false;
-      }
-    });
 
     $('.resizable').resizable({
       maxWidth: 400,
