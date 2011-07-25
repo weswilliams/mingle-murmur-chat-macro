@@ -37,6 +37,27 @@ murmurChat.initNewMessage = function($) {
   });
 };
 
+murmurChat.filterByUser = function($, user) {
+  var filterUser = user.toLowerCase().trim(), murmurUser;
+  $('.murmur').each(function(){
+    var murmurUser = $('#user-name', $(this)).text().toLowerCase().trim();
+    if (filterUser === murmurUser || filterUser === '') {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+};
+
+murmurChat.initFilterByUser = function($) {
+  $("#murmur-filter").keydown(function(e) {
+    if ((e.keyCode || e.which) == 13) {
+      murmurChat.filterByUser($, $("#murmur-filter").val());
+      return false;
+    }
+  });
+};
+
 murmurChat.createMurmur = function(murmurXML, $) {
   var murmur, iconPath, id;
   murmur = $('#murmur-template:first').clone();
@@ -110,6 +131,7 @@ murmurChat.init = function($, project, updateInterval, mingle_url) {
     murmurChat.initNewMessage($);
     murmurChat.initFilter($);
     murmurChat.initResizeMurmurs($);
+    murmurChat.initFilterByUser($);
   } catch(err) {
     murmurChat.log(err);
   }
