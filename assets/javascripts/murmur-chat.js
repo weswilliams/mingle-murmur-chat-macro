@@ -1,5 +1,15 @@
 var murmurChat = {};
 
+murmurChat.initFilter = function($) {
+
+  murmurChat.log('init filter with user names');
+  $("#murmur-filter").autocomplete({
+    source: ['wes', 'Barbara. Krug']
+  });
+  murmurChat.log('success: init filter with user names');
+
+};
+
 murmurChat.createMurmur = function(murmurXML, $) {
   var murmur, iconPath, id;
   murmur = $('#murmur-template:first').clone();
@@ -45,6 +55,8 @@ murmurChat.init = function($, project, updateInterval, mingle_url) {
   };
 
   try {
+
+    murmurChat.initFilter($);
 
     murmurChat.url = mingle_url + '/api/v2/projects/' + project + '/murmurs.xml';
 

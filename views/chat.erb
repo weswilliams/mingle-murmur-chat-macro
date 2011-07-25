@@ -20,6 +20,10 @@
     <textarea rows="3" cols="1" id="new-murmur"></textarea>
   </div>
 
+  <div class="murmur-filter ui-widget">
+    <label for="murmur-filter">Filter: </label> <input id="murmur-filter">
+  </div>
+
   <div id='murmur-messages' class="murmur-feed"></div>
   <br/>
 </div>
@@ -42,7 +46,7 @@
         try {
             murmurChat.log("starting murmur chat");
             murmurChat.init(jQuery, jQuery('#project').text(),
-                    parseInt(jQuery('#update_interval').text(),10),
+                    parseInt(jQuery('#update_interval').text(), 10),
                     jQuery("#mingle_url").text()
             );
         } catch(err) {
