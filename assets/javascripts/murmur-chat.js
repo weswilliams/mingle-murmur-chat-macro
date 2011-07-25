@@ -37,25 +37,31 @@ murmurChat.initNewMessage = function($) {
   });
 };
 
-murmurChat.filterByUser = function($, filter) {
+murmurChat.filters = function() {
 
-  var userFilter = function($, filter, murmur) {
-    if (filter.indexOf('@') !== 0) {
+
+};
+
+murmurChat.filter = function($, filter) {
+
+  var userFilter = function($, data) {
+    if (data.filter.indexOf('@') !== 0) {
       return true;
     }
-    var filterUser = filter.toLowerCase().trim().substring(1),
-        murmurUser = $('#user-name', murmur).text().toLowerCase().trim();
+    var filterUser = data.filter.toLowerCase().trim().substring(1),
+        murmurUser = $('#user-name', data.murmur).text().toLowerCase().trim();
     return filterUser === murmurUser
   };
 
-  var noFilter = function($, filter, murmur) {
-    return filter.trim() === '';
+  var noFilter = function($, data) {
+    return data.filter.trim() === '';
   };
 
-  $('.murmur').each(function(){
+  $('.murmur').each(function() {
     var murmurUser = $('#user-name', $(this)).text().toLowerCase().trim(),
-        murmur = $(this);
-    if (noFilter($, filter, $(this)) || userFilter($, filter, murmur)) {
+        murmur = $(this),
+        data = { filter: filter, murmur: murmur };
+    if (noFilter($, data) || userFilter($, data)) {
       murmur.show();
     } else {
       murmur.hide();
@@ -66,7 +72,7 @@ murmurChat.filterByUser = function($, filter) {
 murmurChat.initFilterByUser = function($) {
   $("#murmur-filter").keydown(function(e) {
     if ((e.keyCode || e.which) == 13) {
-      murmurChat.filterByUser($, $("#murmur-filter").val());
+      murmurChat.filter($, $("#murmur-filter").val());
       return false;
     }
   });
