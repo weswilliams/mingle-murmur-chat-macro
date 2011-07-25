@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b3adc3-2637-48bd-b4d7-00791027993d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/wes.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/wes.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" afterPath="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/stylesheets/murmur-chat.css" afterPath="$PROJECT_DIR$/assets/stylesheets/murmur-chat.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/chat.erb" afterPath="$PROJECT_DIR$/views/chat.erb" />
     </list>
     <ignored path="mingle-murmur-macro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,19 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="murmur-chat.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="murmur-chat.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/stylesheets/murmur-chat.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="0" selection-start="865" selection-end="865" vertical-scroll-proportion="0.34642032">
+            <state line="61" column="0" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="murmur-chat.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="murmur-chat.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="27" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+            <state line="78" column="28" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.47806004">
               <folding />
             </state>
           </provider>
@@ -82,9 +79,9 @@
         <option value="$PROJECT_DIR$/assets/javascripts/debug.js" />
         <option value="$PROJECT_DIR$/lib/murmur_chat.rb" />
         <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
         <option value="$PROJECT_DIR$/views/chat.erb" />
         <option value="$PROJECT_DIR$/assets/stylesheets/murmur-chat.css" />
+        <option value="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
       </list>
     </option>
   </component>
@@ -369,7 +366,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- added parameter for update_interval&#10;- updated README" />
+    <option name="LAST_COMMIT_MESSAGE" value="- initial search box with simple auto complete for user names" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -382,7 +379,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="- added style sheet for the macro" />
     <MESSAGE value="- added icon and fixed layout issues" />
     <MESSAGE value="- fixed layout issues with murmur&#10;- added id to each murmur&#10;" />
     <MESSAGE value="- added date&#10;-changed colors" />
@@ -407,6 +403,7 @@
     <MESSAGE value="- fixed an issue with debug enable&#10;- use === for undefined&#10;- renamed projectIdentifier to project&#10;- updated README" />
     <MESSAGE value="- updated README" />
     <MESSAGE value="- added parameter for update_interval&#10;- updated README" />
+    <MESSAGE value="- initial search box with simple auto complete for user names" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -473,13 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="27" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/chat.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="8" selection-start="964" selection-end="964" vertical-scroll-proportion="-9.375">
@@ -489,7 +479,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/stylesheets/murmur-chat.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="865" selection-end="865" vertical-scroll-proportion="0.34642032">
+        <state line="61" column="0" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="28" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.47806004">
           <folding />
         </state>
       </provider>

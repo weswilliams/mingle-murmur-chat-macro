@@ -3,10 +3,28 @@ var murmurChat = {};
 murmurChat.initFilter = function($) {
 
   murmurChat.log('init filter with user names');
-  $("#murmur-filter").autocomplete({
-    source: ['wes', 'Barbara. Krug']
-  });
-  murmurChat.log('success: init filter with user names');
+
+  var success = function(xml, status) {
+    var users = [];
+    murmurChat.log("retrieved users: " + xml);
+    
+    $(xml).find("user").each(function() {
+      var name = $(this).find("name").text();
+      murmurChat.log("add user " + name);
+      users.push(name);
+    });
+
+    $("#murmur-filter").autocomplete({
+      source: users
+    });
+  };
+
+  try {
+    murmurChat.log('retrieving users from: ' + murmurChat.userURL);
+    $.get(murmurChat.userURL, success);
+  } catch(e) {
+    murmurChat.log("error getting users: " + e);
+  }
 
 };
 
@@ -56,9 +74,9 @@ murmurChat.init = function($, project, updateInterval, mingle_url) {
 
   try {
 
-    murmurChat.initFilter($);
-
     murmurChat.url = mingle_url + '/api/v2/projects/' + project + '/murmurs.xml';
+    murmurChat.userURL = mingle_url + '/api/v2/users.xml';
+    murmurChat.initFilter($);
 
     $("#debug-info").ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
       murmurChat.log("Triggered ajaxError handler: " + thrownError);
