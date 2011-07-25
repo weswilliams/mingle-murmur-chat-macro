@@ -39,11 +39,6 @@ murmurChat.initNewMessage = function($) {
 
 murmurChat.filters = function() {
 
-
-};
-
-murmurChat.filter = function($, filter) {
-
   var userFilter = function($, data) {
     if (data.filter.indexOf('@') !== 0) {
       return true;
@@ -57,15 +52,24 @@ murmurChat.filter = function($, filter) {
     return data.filter.trim() === '';
   };
 
+  return [userFilter, noFilter];
+};
+
+murmurChat.filter = function($, filter) {
+
   $('.murmur').each(function() {
     var murmurUser = $('#user-name', $(this)).text().toLowerCase().trim(),
         murmur = $(this),
-        data = { filter: filter, murmur: murmur };
-    if (noFilter($, data) || userFilter($, data)) {
-      murmur.show();
-    } else {
-      murmur.hide();
+        data = { filter: filter, murmur: murmur },
+        filters = murmurChat.filters(),
+        show = false, index = 0;
+    for (index = 0; index < filters.length; index++) {
+      if (filters[index]($, data)) {
+        show = true;
+        break;
+      }
     }
+    murmur.toggle(show);
   });
 };
 
