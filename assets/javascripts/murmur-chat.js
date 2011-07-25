@@ -1,6 +1,6 @@
 var murmurChat = {};
 
-murmurChat.initFilter = function($) {
+murmurChat.initFilterUserAutoComplete = function($) {
 
   murmurChat.log('init filter with user names');
 
@@ -39,24 +39,24 @@ murmurChat.initNewMessage = function($) {
 
 murmurChat.filters = function() {
 
-  var userFilter = function($, data) {
+  var userNameFilter = function($, data) {
     if (data.filter.indexOf('@') !== 0) {
       return true;
     }
-    var filterUser = data.filter.toLowerCase().trim().substring(1),
-        murmurUser = $('#user-name', data.murmur).text().toLowerCase().trim();
-    return filterUser === murmurUser
+    var filterUser = data.filter.trim().substring(1),
+        murmurUser = $('#user-name', data.murmur).text().trim(),
+        namePattern = new RegExp(filterUser, "i");
+    return namePattern.test(murmurUser);
   };
 
   var noFilter = function($, data) {
     return data.filter.trim() === '';
   };
 
-  return [userFilter, noFilter];
+  return [userNameFilter, noFilter];
 };
 
 murmurChat.filter = function($, filter) {
-
   $('.murmur').each(function() {
     var murmurUser = $('#user-name', $(this)).text().toLowerCase().trim(),
         murmur = $(this),
@@ -73,7 +73,7 @@ murmurChat.filter = function($, filter) {
   });
 };
 
-murmurChat.initFilterByUser = function($) {
+murmurChat.initFilter = function($) {
   $("#murmur-filter").keydown(function(e) {
     if ((e.keyCode || e.which) == 13) {
       murmurChat.filter($, $("#murmur-filter").val());
@@ -153,9 +153,9 @@ murmurChat.init = function($, project, updateInterval, mingle_url) {
     murmurChat.initAjaxErrorHandling($);
     murmurChat.initMurmurs($);
     murmurChat.initNewMessage($);
-    murmurChat.initFilter($);
+    murmurChat.initFilterUserAutoComplete($);
     murmurChat.initResizeMurmurs($);
-    murmurChat.initFilterByUser($);
+    murmurChat.initFilter($);
   } catch(err) {
     murmurChat.log(err);
   }
