@@ -41,36 +41,43 @@ murmurChat.filters = function() {
 
   var userFilter = function($, data) {
     if (data.filter.indexOf('@') !== 0) {
-      return true;
+      return false;
     }
     var filterUser = data.filter.trim().substring(1),
-        murmurUser = $('#' + data.searchField, data.murmur).text().trim(),
+        searchField = $('#' + data.searchField, data.murmur).text().trim(),
         namePattern = new RegExp(filterUser, "i");
-    return namePattern.test(murmurUser);
+    return namePattern.test(searchField);
   };
 
   var userNameFilter = function($, data) {
+    murmurChat.log("applying user name filter: " + data);
     data.searchField = 'user-name';
     return userFilter($, data);
   };
 
   var userMentionFilter = function($, data) {
+    murmurChat.log("applying user mention filter: " + data);
     data.searchField = 'message';
     return userFilter($, data);
   };
 
   var textFilter = function($, data) {
-    
+    murmurChat.log("applying text message filter: " + data);
+    var textFilter = data.filter.trim().substring(1),
+        message = $('#message', data.murmur).text().trim(),
+        pattern = new RegExp(textFilter, "i");
+    return pattern.test(message);
   };
 
   var noFilter = function($, data) {
     return data.filter.trim() === '';
   };
 
-  return [noFilter, userNameFilter, userMentionFilter];
+  return [noFilter, userNameFilter, userMentionFilter, textFilter];
 };
 
 murmurChat.filter = function($, filter) {
+  murmurChat.log("applying filter: " + filter);
   $('.murmur').each(function() {
     var murmur = $(this),
         data = { filter: filter, murmur: murmur },

@@ -38,7 +38,7 @@
       <file leaf-file-name="murmur-chat.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="33" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.62355655">
+            <state line="43" column="18" selection-start="988" selection-end="988" vertical-scroll-proportion="0.31177828">
               <folding />
             </state>
           </provider>
@@ -357,7 +357,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- added to readme to show how to search by user" />
+    <option name="LAST_COMMIT_MESSAGE" value="- changed the order to allow a bit faster filter" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -370,7 +370,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="- removed log statements" />
     <MESSAGE value="- removed duplication" />
     <MESSAGE value="- fixed ordering issue on update" />
     <MESSAGE value="- removed unused method" />
@@ -395,6 +394,7 @@
     <MESSAGE value="- search for user mentioned in the message" />
     <MESSAGE value="- removing duplication" />
     <MESSAGE value="- added to readme to show how to search by user" />
+    <MESSAGE value="- changed the order to allow a bit faster filter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -471,7 +471,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="33" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.62355655">
+        <state line="43" column="18" selection-start="988" selection-end="988" vertical-scroll-proportion="0.31177828">
           <folding />
         </state>
       </provider>
