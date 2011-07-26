@@ -39,20 +39,21 @@ murmurChat.initNewMessage = function($) {
 
 murmurChat.filters = function($) {
 
-  var filterDecorator = function($, pattern, field) {
-    murmurChat.log("decorate search");
-    field.html(field.text().replace(pattern, "<span class='filter-highlight'>$1</span>"));
-  };
-
   var userFilter = function($, data) {
-    if (data.filter.indexOf('@') !== 0) {
-      return false;
-    }
-    var filterUser = data.filter.trim().substring(1),
-        searchField = $('#' + data.searchField, data.murmur),
-        namePattern = new RegExp("(" + filterUser + ")", "gi");
-    filterDecorator($, namePattern, searchField);
-    return namePattern.test(searchField.text().trim());
+    var that = {},
+        filterUser = data.filter.trim().substring(1);
+
+    that.searchField = $('#' + data.searchField, data.murmur),
+    that.pattern = new RegExp("(" + filterUser + ")", "gi");
+
+    that.matches = function() {
+      if (data.filter.indexOf('@') !== 0) {
+        return false;
+      }
+      return that.pattern.test(that.searchField.text().trim());
+    };
+
+    return that;
   };
 
   var userNameFilter = function($, data) {
@@ -79,7 +80,8 @@ murmurChat.filters = function($) {
     return data.filter.trim() === '';
   };
 
-  return [noFilter, userNameFilter, userMentionFilter, textFilter];
+  return [userNameFilter, userMentionFilter];
+//  return [noFilter, userNameFilter, userMentionFilter, textFilter];
 };
 
 murmurChat.filter = function($, filter) {
@@ -89,15 +91,23 @@ murmurChat.filter = function($, filter) {
     return $(this).text();
   });
 
+  var filterDecorator = function($, filter) {
+    murmurChat.log("decorate search");
+    filter.searchField.html(filter.searchField.text().replace(
+        filter.pattern, "<span class='filter-highlight'>$1</span>"));
+  };
+
   $('.murmur').each(function() {
     var murmur = $(this),
         data = { filter: filter, murmur: murmur },
         filters = murmurChat.filters($),
-        show = false, index = 0;
+        show = false, index = 0,
+        thisFilter;
     for (index = 0; index < filters.length; index++) {
-      if (filters[index]($, data)) {
+      thisFilter = filters[index]($, data);
+      if (thisFilter.matches()) {
         show = true;
-        break;
+        filterDecorator($, thisFilter);
       }
     }
     murmur.toggle(show);
