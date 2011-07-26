@@ -59,11 +59,15 @@ murmurChat.filters = function() {
     return userFilter($, data);
   };
 
+  var textFilter = function($, data) {
+    
+  };
+
   var noFilter = function($, data) {
     return data.filter.trim() === '';
   };
 
-  return [userNameFilter, noFilter, userMentionFilter];
+  return [noFilter, userNameFilter, userMentionFilter];
 };
 
 murmurChat.filter = function($, filter) {
