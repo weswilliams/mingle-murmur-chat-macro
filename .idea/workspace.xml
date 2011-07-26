@@ -38,7 +38,7 @@
       <file leaf-file-name="murmur-chat.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="17" selection-start="1700" selection-end="1700" vertical-scroll-proportion="0.34642032">
+            <state line="85" column="0" selection-start="2142" selection-end="2142" vertical-scroll-proportion="0.4503464">
               <folding />
             </state>
           </provider>
@@ -366,7 +366,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- initial decoration of user filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="- refactoring to remove duplication" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -379,7 +379,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="- removed unused method" />
     <MESSAGE value="- hide debug log when debug disabled" />
     <MESSAGE value="- fixed issue with order of clear in updates" />
     <MESSAGE value="- fixed image location issue" />
@@ -404,6 +403,7 @@
     <MESSAGE value="- changed the order to allow a bit faster filter" />
     <MESSAGE value="- added simple text search (no escaping so probably has issues)&#10;- fixed issue with user searches always returning a match for non user search" />
     <MESSAGE value="- initial decoration of user filters" />
+    <MESSAGE value="- refactoring to remove duplication" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -482,7 +482,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="17" selection-start="1700" selection-end="1700" vertical-scroll-proportion="0.34642032">
+        <state line="85" column="0" selection-start="2142" selection-end="2142" vertical-scroll-proportion="0.4503464">
           <folding />
         </state>
       </provider>

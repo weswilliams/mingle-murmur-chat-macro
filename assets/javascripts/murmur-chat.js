@@ -77,10 +77,14 @@ murmurChat.filters = function($) {
   };
 
   var noFilter = function($, data) {
-    return data.filter.trim() === '';
+    var that = {};
+    that.matches = function() {
+      return data.filter.trim() === '';
+    };
+    return that;
   };
 
-  return [userNameFilter, userMentionFilter];
+  return [noFilter, userNameFilter, userMentionFilter];
 //  return [noFilter, userNameFilter, userMentionFilter, textFilter];
 };
 
@@ -93,6 +97,9 @@ murmurChat.filter = function($, filter) {
 
   var filterDecorator = function($, filter) {
     murmurChat.log("decorate search");
+    if (filter.searchField === undefined || filter.pattern === undefined) {
+      return;
+    }
     filter.searchField.html(filter.searchField.text().replace(
         filter.pattern, "<span class='filter-highlight'>$1</span>"));
   };
