@@ -66,6 +66,11 @@
     max-width: 380px;
 }
 
+.filter-highlight {
+    font-weight: bold;
+    color: #ffefcb;
+}
+
 label {
     display: inline;
 }

@@ -37,16 +37,22 @@ murmurChat.initNewMessage = function($) {
   });
 };
 
-murmurChat.filters = function() {
+murmurChat.filters = function($) {
+
+  var filterDecorator = function($, pattern, field) {
+    murmurChat.log("decorate search");
+    field.html(field.text().replace(pattern, "<span class='filter-highlight'>$1</span>"));
+  };
 
   var userFilter = function($, data) {
     if (data.filter.indexOf('@') !== 0) {
       return false;
     }
     var filterUser = data.filter.trim().substring(1),
-        searchField = $('#' + data.searchField, data.murmur).text().trim(),
-        namePattern = new RegExp(filterUser, "i");
-    return namePattern.test(searchField);
+        searchField = $('#' + data.searchField, data.murmur),
+        namePattern = new RegExp("(" + filterUser + ")", "gi");
+    filterDecorator($, namePattern, searchField);
+    return namePattern.test(searchField.text().trim());
   };
 
   var userNameFilter = function($, data) {
@@ -65,7 +71,7 @@ murmurChat.filters = function() {
     murmurChat.log("applying text message filter: " + data);
     var textFilter = data.filter.trim().substring(1),
         message = $('#message', data.murmur).text().trim(),
-        pattern = new RegExp(textFilter, "i");
+        pattern = new RegExp(textFilter, "gi");
     return pattern.test(message);
   };
 
@@ -78,10 +84,15 @@ murmurChat.filters = function() {
 
 murmurChat.filter = function($, filter) {
   murmurChat.log("applying filter: " + filter);
+
+  $('.filter-highlight').replaceWith(function() {
+    return $(this).text();
+  });
+
   $('.murmur').each(function() {
     var murmur = $(this),
         data = { filter: filter, murmur: murmur },
-        filters = murmurChat.filters(),
+        filters = murmurChat.filters($),
         show = false, index = 0;
     for (index = 0; index < filters.length; index++) {
       if (filters[index]($, data)) {
