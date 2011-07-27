@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76b3adc3-2637-48bd-b4d7-00791027993d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/parameter_spec.rb" afterPath="$PROJECT_DIR$/test/spec/parameter_spec.rb" />
     </list>
     <ignored path="mingle-murmur-macro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,10 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="59" selection-start="856" selection-end="856" vertical-scroll-proportion="0.62355655">
+            <state line="18" column="59" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parameter_spec.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/spec/parameter_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.34642032">
               <folding />
             </state>
           </provider>
@@ -93,7 +102,6 @@
         <option value="$PROJECT_DIR$/test/spec/completed_stories_spec.rb" />
         <option value="$PROJECT_DIR$/test/spec/current_iteration_spec.rb" />
         <option value="$PROJECT_DIR$/test/spec/remaining_stories_spec.rb" />
-        <option value="$PROJECT_DIR$/test/spec/parameter_spec.rb" />
         <option value="$PROJECT_DIR$/assets/javascripts/debug.js" />
         <option value="$PROJECT_DIR$/lib/murmur_chat.rb" />
         <option value="$PROJECT_DIR$/assets/stylesheets/murmur-chat.css" />
@@ -101,6 +109,7 @@
         <option value="$PROJECT_DIR$/assets/javascripts/murmur-chat.js" />
         <option value="$PROJECT_DIR$/views/chat.erb" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/test/spec/parameter_spec.rb" />
       </list>
     </option>
   </component>
@@ -209,7 +218,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="Rake.full_deploy">
+  <component name="RunManager" selected="Rake.spec">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -449,11 +458,6 @@
         <state line="32" column="58" selection-start="1096" selection-end="1111" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/spec/parameter_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="25" selection-start="418" selection-end="418" vertical-scroll-proportion="0.60570073" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/default_user_avatar.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -504,7 +508,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="59" selection-start="856" selection-end="856" vertical-scroll-proportion="0.62355655">
+        <state line="18" column="59" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/spec/parameter_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="243" selection-end="243" vertical-scroll-proportion="0.34642032">
           <folding />
         </state>
       </provider>

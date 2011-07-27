@@ -11,7 +11,7 @@ describe "parameters" do
 
   describe "@macro#debug_parameter" do
     subject { @macro.debug_parameter }
-    it { should == true }
+    it { should == false }
   end
 
   describe "@macro#view_parameter" do
