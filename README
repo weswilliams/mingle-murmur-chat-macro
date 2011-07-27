@@ -18,9 +18,6 @@ optional parameters
 * mingle_url: url to mingle - only needed if your instance is not at the root
 * search by user with user auto-complete using '@user name'
 ** searches both user who posted as well as comments to user in the message
-
-Future:
-
-search by story #
-search by text
-add @user to highlight messages to me
+* search for card number in test and related (from) text just a number or #number
+* search for text
+* links to cards
