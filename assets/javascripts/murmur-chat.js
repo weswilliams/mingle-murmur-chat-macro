@@ -126,6 +126,9 @@ murmurChat.filter = function($, filter) {
       if (matches && canBeHighlighted()) {
         pattern = new RegExp("(\/)?" + filter.pattern.source, "gi");
         murmurChat.log("new regex: " + pattern.source);
+        // TODO - I don't have a better solution for this but this is emulating a reverse negative
+        //        lookup to fix an issue with decorating card number search that is part of the url.
+        //        It fixes that issue but there are still potential for issues with search decoration.
         filter.searchField.html(filter.searchField.html().replace(
             pattern, function($0, $1, $2) {
               murmurChat.log("$0=" + $0 + "$1=" + $1 + "$2=" + $2);
