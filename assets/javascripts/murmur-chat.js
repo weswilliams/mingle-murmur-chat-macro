@@ -45,7 +45,7 @@ murmurChat.filters = function($) {
         searchField = $('#' + data.searchField, data.murmur),
         pattern = new RegExp("(" + filterUser + ")", "gi");
     that.searchField = searchField,
-    that.pattern = pattern;
+        that.pattern = pattern;
     that.matches = function() {
       if (data.filter.indexOf('@') !== 0) {
         return false;
@@ -99,27 +99,33 @@ murmurChat.filter = function($, filter) {
     return $(this).text();
   });
 
-  var filterDecorator = function($, filter) {
+  var filterHighlighter = function($, filter) {
     murmurChat.log("decorate search");
-    if (filter.searchField === undefined || filter.pattern === undefined) {
-      return;
-    }
-    filter.searchField.html(filter.searchField.text().replace(
-        filter.pattern, "<span class='filter-highlight'>$1</span>"));
+    var that = {},
+        canBeHighlighted = function () {
+          return filter.searchField !== undefined && filter.pattern !== undefined;
+        };
+
+    that.matches = function() {
+      var matches = filter.matches();
+      if (matches && canBeHighlighted()) {
+        filter.searchField.html(filter.searchField.text().replace(
+            filter.pattern, "<span class='filter-highlight'>$1</span>"));
+      }
+      return matches;
+    };
+
+    return that;
   };
 
   $('.murmur').each(function() {
     var murmur = $(this),
         data = { filter: filter, murmur: murmur },
         filters = murmurChat.filters($),
-        show = false, index = 0,
-        thisFilter;
+        show = false, index = 0, thisFilter;
     for (index = 0; index < filters.length; index++) {
-      thisFilter = filters[index]($, data);
-      if (thisFilter.matches()) {
-        show = true;
-        filterDecorator($, thisFilter);
-      }
+      thisFilter = filterHighlighter($, filters[index]($, data));
+      show = show || thisFilter.matches();
     }
     murmur.toggle(show);
   });
