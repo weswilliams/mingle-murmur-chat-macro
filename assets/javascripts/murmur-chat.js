@@ -151,10 +151,17 @@ murmurChat.createMurmur = function(murmurXML, $) {
   if (murmurChat.lastMurmurId === undefined || id > murmurChat.lastMurmurId) {
     murmurChat.lastMurmurId = id;
   }
-  murmurChat.log("murmurChat.lastMurmurId = " + murmurChat.lastMurmurId);
+
+  var cardDecorator = function(message) {
+    var pattern = /(#)(\d+)/g,
+        linkHtml = $('#card-link-template').html();
+    murmurChat.log("card link html: " + linkHtml);
+    return message.replace(pattern, linkHtml);
+  };
+
   murmur.attr('id', id);
   $('#user-image', murmur).attr('src', iconPath);
-  $('#message', murmur).text(murmurXML.find('body').text());
+  $('#message', murmur).html(cardDecorator(murmurXML.find('body').text()));
   $('#user-name', murmur).text(murmurXML.find('name').text());
   $('#create-at', murmur).text(murmurXML.find('created_at').text());
   murmur.removeClass('hidden');
