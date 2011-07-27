@@ -141,7 +141,7 @@ murmurChat.initFilter = function($) {
 };
 
 murmurChat.createMurmur = function(murmurXML, $) {
-  var murmur, iconPath, id;
+  var murmur, iconPath, id, relatedTo;
   murmur = $('#murmur-template:first').clone();
   iconPath = murmurXML.find('icon_path').text();
   if (!iconPath) {
@@ -152,18 +152,23 @@ murmurChat.createMurmur = function(murmurXML, $) {
     murmurChat.lastMurmurId = id;
   }
 
-  var cardDecorator = function(message) {
-    var pattern = /(#)(\d+)/g,
-        linkHtml = $('#card-link-template').html();
-    murmurChat.log("card link html: " + linkHtml);
-    return message.replace(pattern, linkHtml);
+  var msgCardDecorator = function(message) {
+    return message.replace(/(#)(\d+)/g, $('#card-link-template').html());
+  };
+
+  var relatedCardDecorator = function(related) {
+    return related.replace(/(\d+)/g, $('#related-link-template').html());
   };
 
   murmur.attr('id', id);
   $('#user-image', murmur).attr('src', iconPath);
-  $('#message', murmur).html(cardDecorator(murmurXML.find('body').text()));
+  $('#message', murmur).html(msgCardDecorator(murmurXML.find('body').text()));
   $('#user-name', murmur).text(murmurXML.find('name').text());
   $('#create-at', murmur).text(murmurXML.find('created_at').text());
+  relatedTo = murmurXML.find('origin').find('number').text();
+  if (relatedTo) {
+    $('#from-card', murmur).html(relatedCardDecorator("from: " + relatedTo));
+  }
   murmur.removeClass('hidden');
   murmur.addClass('murmur');
   return murmur;

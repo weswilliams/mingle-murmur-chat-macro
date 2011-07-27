@@ -6,7 +6,7 @@
 
   <div id="message" class="message"></div>
   <div class="user-name">
-    <span id="user-name"></span> <span id="create-at" class="create-at"></span>
+    <span id="user-name"></span> <span id="create-at" class="create-at"></span> <span id='from-card'></span>
   </div>
 </div>
 
@@ -34,6 +34,7 @@
 <div id="update_interval" class="hidden"><%= update_interval_parameter %></div>
 <div id="mingle_url" class="hidden"><%= mingle_url_parameter %></div>
 <span id='card-link-template' class="hidden"><a target='_blank' href="<%= mingle_url_parameter %>/projects/<%= @project.identifier %>/cards/$2">$1$2</a></span>
+<span id='related-link-template' class="hidden"><a target='_blank' href="<%= mingle_url_parameter %>/projects/<%= @project.identifier %>/cards/$1">$1</a></span>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript">
     jQuery.noConflict();
