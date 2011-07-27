@@ -41,18 +41,17 @@ murmurChat.filters = function($) {
 
   var userFilter = function($, data) {
     var that = {},
-        filterUser = data.filter.trim().substring(1);
-
-    that.searchField = $('#' + data.searchField, data.murmur),
-    that.pattern = new RegExp("(" + filterUser + ")", "gi");
-
+        filterUser = data.filter.trim().substring(1),
+        searchField = $('#' + data.searchField, data.murmur),
+        pattern = new RegExp("(" + filterUser + ")", "gi");
+    that.searchField = searchField,
+    that.pattern = pattern;
     that.matches = function() {
       if (data.filter.indexOf('@') !== 0) {
         return false;
       }
       return that.pattern.test(that.searchField.text().trim());
     };
-
     return that;
   };
 
@@ -70,10 +69,16 @@ murmurChat.filters = function($) {
 
   var textFilter = function($, data) {
     murmurChat.log("applying text message filter: " + data);
-    var textFilter = data.filter.trim().substring(1),
-        message = $('#message', data.murmur).text().trim(),
-        pattern = new RegExp(textFilter, "gi");
-    return pattern.test(message);
+    var that = {},
+        textFilter = data.filter.trim(),
+        message = $('#message', data.murmur),
+        pattern = new RegExp("(" + textFilter + ")", "gi");
+    that.pattern = pattern;
+    that.searchField = message;
+    that.matches = function() {
+      return textFilter !== '' && pattern.test(message.text().trim());
+    };
+    return that;
   };
 
   var noFilter = function($, data) {
@@ -84,8 +89,7 @@ murmurChat.filters = function($) {
     return that;
   };
 
-  return [noFilter, userNameFilter, userMentionFilter];
-//  return [noFilter, userNameFilter, userMentionFilter, textFilter];
+  return [noFilter, userNameFilter, userMentionFilter, textFilter];
 };
 
 murmurChat.filter = function($, filter) {
