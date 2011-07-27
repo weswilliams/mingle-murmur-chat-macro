@@ -88,7 +88,7 @@ murmurChat.filters = function($) {
 
   var relatedFilter = function($, data) {
     var modifiedData = $.extend(true, {}, data);
-    if (modifiedData.filter.indexOf('#') ===  0) {
+    if (modifiedData.filter.indexOf('#') === 0) {
       modifiedData.filter = modifiedData.filter.substring(1);
       murmurChat.log('modified filter: ' + modifiedData.filter);
     }
@@ -122,10 +122,15 @@ murmurChat.filter = function($, filter) {
         };
 
     that.matches = function() {
-      var matches = filter.matches();
+      var matches = filter.matches(), pattern;
       if (matches && canBeHighlighted()) {
-        filter.searchField.html(filter.searchField.text().replace(
-            filter.pattern, "<span class='filter-highlight'>$1</span>"));
+        pattern = new RegExp("(\/)?" + filter.pattern.source, "gi");
+        murmurChat.log("new regex: " + pattern.source);
+        filter.searchField.html(filter.searchField.html().replace(
+            pattern, function($0, $1, $2) {
+              murmurChat.log("$0=" + $0 + "$1=" + $1 + "$2=" + $2);
+              return $1 ? $0 : "<span class='filter-highlight'>" + $2 + "</span>";
+            }));
       }
       return matches;
     };
