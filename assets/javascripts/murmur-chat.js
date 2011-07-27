@@ -71,14 +71,29 @@ murmurChat.filters = function($) {
     murmurChat.log("applying text message filter: " + data);
     var that = {},
         textFilter = data.filter.trim(),
-        message = $('#message', data.murmur),
+        textField = $('#' + data.searchField, data.murmur),
         pattern = new RegExp("(" + textFilter + ")", "gi");
     that.pattern = pattern;
-    that.searchField = message;
+    that.searchField = textField;
     that.matches = function() {
-      return textFilter !== '' && pattern.test(message.text().trim());
+      return textFilter !== '' && pattern.test(textField.text().trim());
     };
     return that;
+  };
+
+  var messageFilter = function($, data) {
+    data.searchField = 'message';
+    return textFilter($, data);
+  };
+
+  var relatedFilter = function($, data) {
+    var modifiedData = $.extend(true, {}, data);
+    if (modifiedData.filter.indexOf('#') ===  0) {
+      modifiedData.filter = modifiedData.filter.substring(1);
+      murmurChat.log('modified filter: ' + modifiedData.filter);
+    }
+    modifiedData.searchField = 'related-link';
+    return textFilter($, modifiedData);
   };
 
   var noFilter = function($, data) {
@@ -89,7 +104,7 @@ murmurChat.filters = function($) {
     return that;
   };
 
-  return [noFilter, userNameFilter, userMentionFilter, textFilter];
+  return [noFilter, userNameFilter, userMentionFilter, messageFilter, relatedFilter];
 };
 
 murmurChat.filter = function($, filter) {

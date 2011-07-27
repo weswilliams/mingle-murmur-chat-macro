@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js" line="111" mnemonic="1" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="76b3adc3-2637-48bd-b4d7-00791027993d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -33,7 +30,7 @@
       <file leaf-file-name="chat.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/chat.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="13" selection-start="1540" selection-end="1561" vertical-scroll-proportion="-5.625">
+            <state line="36" column="67" selection-start="1586" selection-end="1598" vertical-scroll-proportion="-5.625">
               <folding />
             </state>
           </provider>
@@ -42,7 +39,7 @@
       <file leaf-file-name="murmur-chat.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="22" selection-start="4603" selection-end="4603" vertical-scroll-proportion="0.57505774">
+            <state line="92" column="16" selection-start="2557" selection-end="2557" vertical-scroll-proportion="0.40640393">
               <folding />
             </state>
           </provider>
@@ -370,7 +367,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- added card links when message contains #card-number" />
+    <option name="LAST_COMMIT_MESSAGE" value="- showing related card with a from link" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -383,7 +380,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="- allow resizable height" />
     <MESSAGE value="- now using the project identifier&#10;" />
     <MESSAGE value="- fixed an issue with debug enable&#10;- use === for undefined&#10;- renamed projectIdentifier to project&#10;- updated README" />
     <MESSAGE value="- updated README" />
@@ -408,6 +404,7 @@
     <MESSAGE value="- decorator working for text filter&#10;- fixed issue with text filter match for clear" />
     <MESSAGE value="- simplification of the filter code" />
     <MESSAGE value="- added card links when message contains #card-number" />
+    <MESSAGE value="- showing related card with a from link" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -479,14 +476,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/chat.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="1540" selection-end="1561" vertical-scroll-proportion="-5.625">
+        <state line="36" column="67" selection-start="1586" selection-end="1598" vertical-scroll-proportion="-5.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/murmur-chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="22" selection-start="4603" selection-end="4603" vertical-scroll-proportion="0.57505774">
+        <state line="92" column="16" selection-start="2557" selection-end="2557" vertical-scroll-proportion="0.40640393">
           <folding />
         </state>
       </provider>
