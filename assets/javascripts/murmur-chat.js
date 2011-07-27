@@ -129,7 +129,7 @@ murmurChat.filter = function($, filter) {
         filter.searchField.html(filter.searchField.html().replace(
             pattern, function($0, $1, $2) {
               murmurChat.log("$0=" + $0 + "$1=" + $1 + "$2=" + $2);
-              return $1 ? $0 : "<span class='filter-highlight'>" + $2 + "</span>";
+              return $1 ? $0 : "<span class='filter-highlight'>" + murmurChat.replaceSpecialChars($2) + "</span>";
             }));
       }
       return matches;
@@ -182,9 +182,9 @@ murmurChat.createMurmur = function(murmurXML, $) {
 
   murmur.attr('id', id);
   $('#user-image', murmur).attr('src', iconPath);
-  $('#message', murmur).html(msgCardDecorator(murmurXML.find('body').text()));
-  $('#user-name', murmur).text(murmurXML.find('name').text());
-  $('#create-at', murmur).text(murmurXML.find('created_at').text());
+  $('#message', murmur).html(msgCardDecorator(murmurChat.replaceSpecialChars(murmurXML.find('body').text())));
+  $('#user-name', murmur).text(murmurChat.replaceSpecialChars(murmurXML.find('name').text()));
+  $('#create-at', murmur).text(murmurChat.replaceSpecialChars(murmurXML.find('created_at').text()));
   relatedTo = murmurXML.find('origin').find('number').text();
   if (relatedTo) {
     $('#from-card', murmur).html(relatedCardDecorator("from: " + relatedTo));
@@ -312,4 +312,8 @@ murmurChat.update = function($) {
   } catch(err) {
     murmurChat.log("error updating murmurs: " + err);
   }
+};
+
+murmurChat.replaceSpecialChars = function(str) {
+  return str.replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 };
