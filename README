@@ -13,8 +13,8 @@ have to ban your planning tool to ban this chat. :)
 }}
 
 optional parameters
-* debug: yes|no - allow you to see any javascript errors and other info
-* update_interval: number_of_second - defaults to true
+* debug: yes|no - allow you to see any javascript errors and other info, defaults to no
+* update_interval: number_of_second - defaults to 10
 * mingle_url: url to mingle - only needed if your instance is not at the root
 * search by user with user auto-complete using '@user name'
 ** searches both user who posted as well as comments to user in the message
