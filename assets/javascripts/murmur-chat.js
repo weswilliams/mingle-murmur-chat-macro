@@ -39,6 +39,9 @@ murmurChat.createMurmur = function(murmurXML, $) {
   }
   murmur.removeClass('hidden');
   murmur.addClass('murmur');
+//  murmur.addClass('ui-widget-content');
+//  murmur.addClass('ui-corner-all');
+  murmur.hide();
   return murmur;
 };
 
@@ -52,7 +55,7 @@ murmurChat.initMurmurs = function($) {
             clear = $('#clear:first').clone();
         messages.append(murmur);
         messages.append(clear);
-        murmur.show();
+        murmur.show('blind', {}, 200);
       });
       murmurChat.update($);
     } catch(err) {
@@ -114,7 +117,7 @@ murmurChat.createMurmurs = function($, xml, textStatus) {
         clear = $('#clear:first').clone();
         messages.prepend(clear);
         messages.prepend(murmur);
-        murmur.show();
+        murmur.show('blind', {}, 500);
       }
     });
   } catch(err) {
