@@ -29,7 +29,7 @@
       <file leaf-file-name="chat.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/chat.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="36" selection-start="1983" selection-end="1983" vertical-scroll-proportion="0.28030303">
+            <state line="27" column="54" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.11363637">
               <folding />
             </state>
           </provider>
@@ -390,7 +390,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fixed test" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fixed path issue for css and js assets" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -403,7 +403,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="- ability to filter by user, need to refactor to use character indicating type of filter to be user" />
     <MESSAGE value="- refactored to separate different types of filters&#10;- @ indicates user search" />
     <MESSAGE value="- refactored parameters to a json object data" />
     <MESSAGE value="- refactored filtering a bit more" />
@@ -428,6 +427,7 @@
     <MESSAGE value="- slight layout change for from related info" />
     <MESSAGE value="- updated readme" />
     <MESSAGE value="- fixed test" />
+    <MESSAGE value="- fixed path issue for css and js assets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -515,7 +515,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/chat.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="36" selection-start="1983" selection-end="1983" vertical-scroll-proportion="0.28030303">
+        <state line="27" column="54" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.11363637">
           <folding />
         </state>
       </provider>

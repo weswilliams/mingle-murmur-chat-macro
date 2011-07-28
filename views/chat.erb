@@ -2,7 +2,7 @@
 <link type="text/css" href="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/stylesheets/ui-lightness/jquery-ui-1.8.14.custom.css" rel="Stylesheet"/>
 
 <div id="murmur-template" class="hidden">
-  <img id="user-image" src="../../../../plugin_assets/murmur_chat/images/default_user_avatar.png">
+  <img id="user-image" src="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/images/default_user_avatar.png">
 
   <div id="message" class="message"></div>
   <div class="user-name">
@@ -36,12 +36,12 @@
 <div id="mingle_url" class="hidden"><%= mingle_url_parameter %></div>
 <span id='card-link-template' class="hidden"><a target='_blank' href="<%= mingle_url_parameter %>/projects/<%= @project.identifier %>/cards/$2">$1$2</a></span>
 <span id='related-link-template' class="hidden"><a  id='related-link' target='_blank' href="<%= mingle_url_parameter %>/projects/<%= @project.identifier %>/cards/$1">$1</a></span>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-<script type="text/javascript">
+<script language="javascript" type="text/javascript" src="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/javascripts/jquery-1.6.2.min.js"></script>
+<script language="javascript" type="text/javascript">
     jQuery.noConflict();
     var murmurChat = {};
 </script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+<script language="javascript" type="text/javascript" src="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/javascripts/jquery-ui-1.8.9.custom.min.js"></script>
 <script language="javascript" type="text/javascript" src="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/javascripts/murmur-filter.js"></script>
 <script language="javascript" type="text/javascript" src="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/javascripts/murmur-chat.js"></script>
 <script language="javascript" type="text/javascript" src="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/javascripts/debug.js"></script>
