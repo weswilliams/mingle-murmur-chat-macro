@@ -21,3 +21,9 @@ optional parameters
 * search for card number in test and related (from) text just a number or #number
 * search for text
 * links to cards
+
+Ideas/Improvements
+* current filter applied to updates
+* @user id look up for posts
+* better @user support in filter for multiple users
+* ???
