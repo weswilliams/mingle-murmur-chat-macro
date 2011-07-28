@@ -1,3 +1,4 @@
+murmurChat.currentFilter = '';
 
 murmurChat.filters = function() {
 
@@ -75,6 +76,8 @@ murmurChat.filter = function($, filter) {
   $('.filter-highlight').replaceWith(function() {
     return $(this).text();
   });
+
+  murmurChat.currentFilter = filter;
 
   var filterHighlighter = function($, filter) {
     murmurChat.log("decorate search");

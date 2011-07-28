@@ -120,6 +120,7 @@ murmurChat.createMurmurs = function($, xml, textStatus) {
         murmur.show('blind', {}, 500);
       }
     });
+    murmurChat.filter($, murmurChat.currentFilter);
   } catch(err) {
     murmurChat.log("error updating murmur: status:" + textStatus + ", err: " + err);
   }
