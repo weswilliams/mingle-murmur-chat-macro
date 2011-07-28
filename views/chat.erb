@@ -1,5 +1,5 @@
-<link href="../../../../plugin_assets/murmur_chat/stylesheets/murmur-chat.css" media="screen" rel="stylesheet" type="text/css"/>
-<link type="text/css" href="../../../../plugin_assets/murmur_chat/stylesheets/ui-lightness/jquery-ui-1.8.14.custom.css" rel="Stylesheet"/>
+<link href="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/stylesheets/murmur-chat.css" media="screen" rel="stylesheet" type="text/css"/>
+<link type="text/css" href="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/stylesheets/ui-lightness/jquery-ui-1.8.14.custom.css" rel="Stylesheet"/>
 
 <div id="murmur-template" class="hidden">
   <img id="user-image" src="../../../../plugin_assets/murmur_chat/images/default_user_avatar.png">
@@ -42,9 +42,9 @@
     var murmurChat = {};
 </script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
-<script language="javascript" type="text/javascript" src="../../../../plugin_assets/murmur_chat/javascripts/murmur-filter.js"></script>
-<script language="javascript" type="text/javascript" src="../../../../plugin_assets/murmur_chat/javascripts/murmur-chat.js"></script>
-<script language="javascript" type="text/javascript" src="../../../../plugin_assets/murmur_chat/javascripts/debug.js"></script>
+<script language="javascript" type="text/javascript" src="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/javascripts/murmur-filter.js"></script>
+<script language="javascript" type="text/javascript" src="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/javascripts/murmur-chat.js"></script>
+<script language="javascript" type="text/javascript" src="<%= mingle_url_parameter %>/plugin_assets/murmur_chat/javascripts/debug.js"></script>
 <script type="text/javascript">
     murmurChat.macroDebugInit(jQuery('#debug').text(), jQuery("#debug-info"));
     MingleJavascript.register(function () {
